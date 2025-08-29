@@ -1,10 +1,12 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+
 import PageContainer from "@/components/common/PageContainer";
 import Section from "@/components/common/Section";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { TextInput } from "@/components/ui/TextInput";
+
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
