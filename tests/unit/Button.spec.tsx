@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect,it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import Providers from "@/app/providers";
 import { Button } from "@/components/ui/Button";

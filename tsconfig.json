@@ -18,9 +18,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vitest", "@testing-library/jest-dom"]
   },
   "include": [
     "next-env.d.ts",
@@ -29,7 +31,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "tests"
+    "node_modules"
   ]
 }
