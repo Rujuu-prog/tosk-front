@@ -1,10 +1,27 @@
 import Image from "next/image";
+
+import PageContainer from "@/components/common/PageContainer";
+import Section from "@/components/common/Section";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
+import { TextInput } from "@/components/ui/TextInput";
+
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <PageContainer>
+          <Section title="Welcome">
+            <Card>
+              <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                <TextInput placeholder="Search..." style={{ flex: 1 }} />
+                <Button>Search</Button>
+              </div>
+            </Card>
+          </Section>
+        </PageContainer>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -21,6 +38,7 @@ export default function Home() {
         </ol>
 
         <div className={styles.ctas}>
+          <Button>Primary Button</Button>
           <a
             className={styles.primary}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
