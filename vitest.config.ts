@@ -8,8 +8,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/setup/vitest.setup.ts"],
     include: ["tests/unit/**/*.spec.ts", "tests/unit/**/*.spec.tsx"],
-    pool: "threads",
-    threads: false,
+    pool: "forks",
   },
   resolve: {
     alias: {
