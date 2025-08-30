@@ -6,10 +6,16 @@ export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
   retries: process.env.CI ? 2 : 0,
+  reporter: [
+    ["list"],
+    ["html", { open: "never", outputFolder: "playwright-report" }],
+  ],
   use: {
     baseURL: "http://localhost:3000",
     headless: true,
     trace: "on-first-retry",
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
   },
   webServer: {
     command: useTurbo ? "pnpm build:turbo && pnpm start" : "pnpm dev",
