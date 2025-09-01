@@ -51,15 +51,18 @@ export default function LoginPage() {
 
   const handleSubmit = async (values: LoginFormData) => {
     try {
-      await login(values.email, values.password);
+      const user = await login(values.email, values.password);
       
-      notifications.show({
-        title: "ログイン成功",
-        message: "ようこそ！",
-        color: "green",
-      });
+      if (user) {
+        notifications.show({
+          title: "ログイン成功",
+          message: "ようこそ！",
+          color: "green",
+        });
 
-      router.push("/dashboard");
+        // ユーザー情報が正常に設定された後リダイレクト
+        router.replace("/");
+      }
     } catch (error) {
       const errorMessage = error instanceof Error 
         ? error.message 

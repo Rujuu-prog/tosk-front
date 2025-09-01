@@ -5,6 +5,7 @@ import "./globals.css";
 import { ColorSchemeScript } from "@mantine/core";
 import type { Metadata } from "next";
 
+import { ConditionalLayout } from "@/components/layout/ConditionalLayout";
 import Providers from "./providers";
 
 export const metadata: Metadata = {
@@ -23,7 +24,9 @@ export default function RootLayout({
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <ConditionalLayout>{children}</ConditionalLayout>
+        </Providers>
       </body>
     </html>
   );

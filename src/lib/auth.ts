@@ -209,11 +209,15 @@ class AuthService {
 
   isAuthenticated(): boolean {
     if (USE_MOCK) {
-      return localStorage.getItem('isAuthenticated') === 'true';
+      return typeof window !== 'undefined' && localStorage.getItem('isAuthenticated') === 'true';
     }
     
-    // For real API, we'll check if we can get current user
-    // This is handled by the auth context
+    // For real API, assume authenticated if we have a cookie
+    // The auth context will validate this with an API call
+    if (typeof window !== 'undefined') {
+      return document.cookie.includes('AT=');
+    }
+    
     return false;
   }
 }

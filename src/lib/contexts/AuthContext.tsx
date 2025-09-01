@@ -8,7 +8,7 @@ import { User } from '../types/auth';
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<User | null>;
   signup: (email: string, username: string, displayName: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
@@ -37,6 +37,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
       } catch (error) {
         console.error('Auth initialization failed:', error);
+        setUser(null);
       } finally {
         setLoading(false);
       }
@@ -50,6 +51,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const user = await authService.login({ email, password });
       setUser(user);
+      return user;
     } finally {
       setLoading(false);
     }

@@ -88,7 +88,7 @@ export default function SignupPage() {
         color: "green",
       });
 
-      router.push("/dashboard");
+      router.push("/");
     } catch (error) {
       const errorMessage = error instanceof Error 
         ? error.message 
