@@ -22,6 +22,7 @@
     "test": "pnpm test:unit:run && pnpm test:e2e"
   },
   "dependencies": {
+    "@Rujuu-prog/tosk-openapi-client": "0.0.1",
     "@mantine/charts": "^8.2.7",
     "@mantine/code-highlight": "^8.2.7",
     "@mantine/core": "^8.2.7",
@@ -38,9 +39,11 @@
     "@tiptap/react": "^3.3.0",
     "@tiptap/starter-kit": "^3.3.0",
     "dayjs": "^1.11.17",
+    "framer-motion": "^12.23.12",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-spring": "^10.0.1",
     "recharts": "^3.1.2"
   },
   "devDependencies": {
